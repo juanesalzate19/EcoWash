@@ -1,0 +1,183 @@
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+/* body{
+    background-image: url('IMG/Carro.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+} */
+
+.barra{
+    background-color: #b9e9fc;
+    font-weight: bold;
+}
+
+
+.lista a{
+    padding: 5px 12px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.lista a:hover{
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    background: linear-gradient(#b9e9fc, #b9e9fc) padding-box,
+    linear-gradient(45deg, #3ABCD5, #2187C3, #155CAD) border-box;
+    border: 2px solid transparent;
+}
+
+
+footer{
+    background: #2187C3;
+}
+
+footer a:hover{
+    background-color:#5eb3e4;
+    border-radius: 20px;
+    border: #5eb3e4 solid 2px;
+}
+.btns:hover{
+    background-color:lightblue;
+}
+
+/* ===== Google Font Import - Poformsins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+.datos1{
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: white solid;
+    -webkit-box-shadow: 1px 1px 12px 5px rgba(0, 0, 0, 0.5); 
+    box-shadow: 1px 1px 12px 5px rgba(216, 216, 216, 0.5);
+}
+.container .form .title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(to right,#3ABCD5, #2187C3, #155CAD);
+    border-radius: 25px;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-field input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color:#3ABCD5;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: linear-gradient(to right,#3ABCD5, #2187C3, #155CAD);
+}
+
+.input-field i.icon{
+    left: 0;
+}
+.input-field i.showHidePw{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input{
+    margin: 0 8px -2px 4px;
+    color: #3ABCD5;
+}
+
+.form .text{
+    color: #333;
+    font-size: 14px;
+}
+
+.form a.text{
+    color: #3ABCD5 ;
+    text-decoration: none;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 35px;
+}
+
+.form .button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background: linear-gradient(to right,#3ABCD5, #2187C3, #155CAD);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button .btn-regs:hover{
+    background: linear-gradient(to right,#3ABCD5, #2187C3, #155CAD);
+    width:630px;
+    height:65px ;
+    margin-left:-10px ;
+    margin-top:-5px ;
+}
+
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+
+/*Administrador*/

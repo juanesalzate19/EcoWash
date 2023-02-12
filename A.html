@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOWASH</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <link rel="stylesheet" href="css/fullcalendar.min.css">
+    <script src="js/fullcalendar.min.js"></script>
+    <script src="js/es.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-clockpicker.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-clockpicker.css">
+    <link rel="stylesheet" href="css/styleadmin.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="shortcut icon" href="IMG/logo.png" type="image/x-icon">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-c-plus-plus'></i>
+            <span class="logo_name">EcoWash</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="admin.php" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Administrador</span>
+                </a>
+            </li>
+            <li>
+                <a href="registroEmpleado.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Registro Empleado</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a href="index.php">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Cerrar sesión</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Bienvenido Administrador</span>
+            </div>
+        </nav>
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Empleados</div>
+                        <div class="number">
+                            <?php
+            include ("conexion.php");
+            $cont_empleado=0;
+            $consul1 = "SELECT * FROM empleado";
+            $res1 = mysqli_query($conexion,$consul1);
+            while ($log=mysqli_fetch_assoc($res1)){
+              $cont_empleado= $cont_empleado + 1;
+           }
+           echo $cont_empleado;
+            ?>
+                        </div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+                        </div>
+                    </div>
+                    <i class='bx bx-cart-alt cart'></i>
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Clientes Registrados</div>
+                        <div class="number">
+                            <?php
+            include ("conexion.php");
+            $cont_cliente=0;
+            $consul2 = "SELECT * FROM cliente";
+            $res2 = mysqli_query($conexion,$consul2);
+            while ($log=mysqli_fetch_assoc($res2)){
+              $cont_cliente = $cont_cliente + 1;
+           }
+           echo $cont_cliente;
+            ?>
+                        </div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+                        </div>
+                    </div>
+                    <i class='bx bxs-cart-add cart two'></i>
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Servicios Realizados</div>
+                        <div class="number">
+                            <?php
+            include ("conexion.php");
+            $cont_realizado=0;
+            $consul3 = "SELECT * FROM citas WHERE estado='realizado'";
+            $res3 = mysqli_query($conexion,$consul3);
+            while ($log=mysqli_fetch_assoc($res3)){
+              $cont_realizado = $cont_realizado + 1;
+           }
+           echo $cont_realizado;?>
+                        </div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+                        </div>
+                    </div>
+                    <i class='bx bx-cart cart three'></i>
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Servicios Cancelados</div>
+                        <div class="number">
+                            <?php
+            include ("conexion.php");
+            $cont_cancelado=0;
+            $consul4 = "SELECT * FROM citas WHERE estado='cancelado'";
+            $res4 = mysqli_query($conexion,$consul4);
+            while ($log=mysqli_fetch_assoc($res4)){
+              $cont_cancelado = $cont_cancelado + 1;
+           }
+           echo $cont_cancelado;?>
+                        </div>
+                        <div class="indicator">
+                            <i class='bx bx-down-arrow-alt down'></i>
+                        </div>
+                    </div>
+                    <i class='bx bxs-cart-download cart four'></i>
+                </div>
+            </div>
+
+            <div class="container-fluid" style="margin-left:-20px;">
+                <div class="row">
+                    <div class="sales-boxes">
+                        <div class="recent-sales box">
+                            <div class="title">CITAS</div>
+                            <div class="table-responsive">
+                                <div class="sales-details">
+                                    <table class=" table table-outline-dark table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">FECHA</th>
+                                                <th scope="col">EMPLEADO</th>
+                                                <th scope="col">CLIENTE</th>-
+                                                <th scope="col">ESTADO</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+    include ("conexion.php");
+		$resultados = mysqli_query($conexion,"SELECT start,nombre_e,nombre,estado FROM citas,cliente,empleado WHERE citas.c_empleado=empleado.codigo	AND citas.documento = cliente.documento");
+	  while($log = mysqli_fetch_array($resultados))
+	  {
+	    echo 
+	    '
+			<tr  style="color:white;">
+			<td><a href="#" style="color:black; text-decoration: none;">'.$log['start'].'</a></td>
+			<td><a href="#" style="color:black; text-decoration: none;">'.$log['nombre_e'].'</a></td>
+			<td><a href="#" style="color:black; text-decoration: none;">'.$log['nombre'].'</a></td>
+			<td><a href="#" style="color:black; text-decoration: none;">'.$log['estado'].'</a></td>
+		    </tr>
+	    ';
+	  }	
+    ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-sales box" >
+                            <div class="title"> Clientes registrados</div>
+                            <ul class="top-sales-details">
+                                <?php
+            include ("conexion.php");
+            $consult_cliente = "SELECT * FROM cliente";
+            $res_cliente = mysqli_query($conexion,$consult_cliente);
+            while ($log=mysqli_fetch_assoc($res_cliente)){
+              echo "            
+              <li>
+              <a href='#'>
+                <i class='uil uil-user'></i>
+                <span class='product'>".$log['nombre']."</span>
+              </a>
+            </li>";
+            }
+            ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script>
+
+</body>
+
+</html>

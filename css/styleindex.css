@@ -1,0 +1,246 @@
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.barra{
+    background-color: #b9e9fc;
+    font-weight: bold;
+}
+
+
+.lista a{
+    padding: 5px 12px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.lista a:hover{
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    background: linear-gradient(#b9e9fc, #b9e9fc) padding-box,
+    linear-gradient(45deg, #3ABCD5, #2187C3, #155CAD) border-box;
+    border: 2px solid transparent;
+}
+
+
+footer{
+    background: #2187C3;
+}
+
+footer a:hover{
+    background-color:#5eb3e4;
+    border-radius: 20px;
+    border: #5eb3e4 solid 2px;
+}
+.btns:hover{
+    background-color:lightblue;
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+
+/* botones de la pagina con degradado */
+.botones{
+    color: #FFF;
+    font-size: 15pt;
+    font-family: 'arial';
+    letter-spacing: 1px;
+    padding: 10px 50px;
+    border: 1px solid #CCC;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: .5s all;
+    background: linear-gradient(to right,#3ABCD5, #2187C3, #155CAD);
+    justify-content: center;
+
+}   
+.botones:hover{
+    background: linear-gradient(to right,#3ABCD5, #2187C3, #155CAD);
+    padding:14px 60px 14px 60px ;
+    /* margin-left: -15px; */
+}
+.somos{
+    max-width: 1350px;
+    margin: auto;
+}
+.border{
+    background-color: aquamarine;
+    width:50vw ;
+    height:50vh ;
+    display: flex;
+    justify-items: center;
+    margin: auto;
+}
+/* clase de las parte de las imagenes y los checkbox */
+.imgs{
+    justify-content: center;
+    display:flex;  
+}
+.bar{
+    padding:50px 0px 0px 0px;
+}
+/* custom radio */
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    flex-direction: column;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+/* create custom radio */
+.radio .check{
+    position: absolute;
+    left:0;
+    height:15px;
+    width:15px;
+    background-color: lightskyblue;
+    border: 1px solid blue;
+    border-radius: 50%;
+    z-index:1;
+}
+
+/* on mouse-over, add border color */
+.radio:hover input ~ .check{
+    border: 2px solid #2489C5;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check{
+    background: linear-gradient(to right,#3ABCD5, #2187C3, #155CAD);
+    border:none;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after{
+    content: " ";
+    position: absolute;
+    display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after{
+    display: block;
+}
+
+/* radio style */
+.radio .check:after{
+    top: 5px;
+    left: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+}
+/* al raya de los checkbox */
+.rayita{
+    border-right:3px solid lightskyblue ;
+    position:absolute ;
+    height:400px ;
+    margin-top: -28px;
+    margin-left: 6px;
+    /* margin:10px 0px 0px 149px; */
+}
+/* estilos de la info de quienes somos */
+.texto{
+    width:100%;
+    text-align: right;
+    max-width: 600px;
+    text-align:left;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* separacion de la parte info de el quienes somos */
+.somos{
+    padding:0px 50px 0px 50px ;
+}
+
+/* barra de fondo de titulo de servicios incluidos */
+.incluye-servicios{
+    background:linear-gradient(to right,#3ABCD5, #2187C3, #155CAD);
+    padding:10px 50px 10px 50px ;
+    left: 0;
+    margin-left:-15px;
+    font-weight: 600;
+    color: white;
+}
+
+/* parte de el  texto dentro de las imagenes */
+.imgs figure{
+
+    position: relative;
+    height: 500px;
+    width: 700px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0px 15px 25px rgb(0,0 ,0,0.50 );
+    cursor: pointer;
+    
+}
+
+.imgs figure .img-raya{
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+}
+
+.imgs figure .capa{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11,103,123,0.6);
+    opacity: 0;
+    transition: all 500ms ease-out;
+    text-align: center;
+    visibility: hidden;
+}
+
+.imgs figure:hover > .capa{
+   opacity: 0.8;
+   visibility: visible; 
+
+}
+
+.imgs figure > .capa p{
+    color: white;
+    font-size: 15px;
+    line-height: 1.7;
+    width: 100%;
+    margin-top:120px;
+    max-width:700px;
+    font-family: cursive;
+    font-size:25px ;
+
+}
+/* fin parte del texto dentro de las imagenes */
+
+
+.up{
+    float: right;
+    height: 50px;
+   }
+   
+   
+   
+   .up:hover{
+     height: 55px;
+      }
